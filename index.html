@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Close Friends VIP - Giulia Castro</title>
+    <meta
+      name="description"
+      content="Acesso exclusivo ao Close Friends da Giulia Castro"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://lhujzzoqebgjbsnezmrt.supabase.co/storage/v1/object/public/Photos/Icon1024/giuliard.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://lhujzzoqebgjbsnezmrt.supabase.co/storage/v1/object/public/Photos/Icon1024/giuliard.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://lhujzzoqebgjbsnezmrt.supabase.co/storage/v1/object/public/Photos/Icon1024/giuliard.png"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+        />
+      </svg>
+    </button>
+
+    <!-- Quick Access Button -->
+    <button
+      class="quick-access"
+      id="quickAccess"
+      aria-label="Acesso imediato ao formulário"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M13 10V3L4 14h7v7l9-11h-7z"
+        />
+      </svg>
+    </button>
+
+    <!-- Main Container -->
+    <div class="main-container">
+      <div class="content-wrapper">
+        <!-- FORM SECTION -->
+        <div class="form-section">
+          <!-- Branding Header -->
+          <div class="branding-header">
+            <h1 class="brand-title">Close Friends</h1>
+            <p class="brand-subtitle" id="nome-giulia-mobile">Giulia Castro</p>
+          </div>
+
+          <!-- Form Header -->
+          <div class="form-header">
+            <h2 class="form-title">
+              Garantir <span class="highlight">Acesso Exclusivo</span>
+            </h2>
+            <p class="form-subtitle">
+              Preencha seus dados e receba acesso imediato ao Close Friends
+            </p>
+          </div>
+
+          <!-- FORMULÁRIO -->
+          <form id="cfForm" novalidate>
+            <!-- Username Instagram -->
+            <div class="form-group">
+              <label class="form-label" for="username"
+                >Username do Instagram</label
+              >
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  class="form-input"
+                  placeholder="@seuusuario"
+                  autocomplete="off"
+                  required
+                />
+                <span class="input-icon">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+                    alt="Instagram"
+                    style="
+                      width: 24px;
+                      height: 24px;
+                      object-fit: contain;
+                      margin-left: 4.5px;
+                      font-size: 0;
+                    "
+                  />
+                </span>
+              </div>
+              <div class="validation-feedback error" id="usernameError"></div>
+              <div
+                class="validation-feedback success"
+                id="usernameSuccess"
+              ></div>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="form-group">
+              <label class="form-label" for="whatsapp">WhatsApp com DDD</label>
+              <div class="input-wrapper">
+                <input
+                  type="tel"
+                  id="whatsapp"
+                  name="whatsapp"
+                  class="form-input"
+                  placeholder="21 97197-6064"
+                  autocomplete="tel"
+                  maxlength="15"
+                  required
+                />
+                <span class="input-icon">
+                  <img
+                    src="https://lhujzzoqebgjbsnezmrt.supabase.co/storage/v1/object/public/Photos/vecteezy_whatsapp-logo-3d-render_12162809.png"
+                    alt="WhatsApp"
+                    style="width: 34px; height: 34px; object-fit: contain"
+                  />
+                </span>
+              </div>
+              <div class="validation-feedback error" id="whatsappError"></div>
+              <div
+                class="validation-feedback success"
+                id="whatsappSuccess"
+              ></div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label class="form-label" for="email">Seu melhor E-mail</label>
+              <div class="input-wrapper">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="seu@email.com"
+                  autocomplete="email"
+                  required
+                />
+                <span class="input-icon">
+                  <img
+                    src="https://lhujzzoqebgjbsnezmrt.supabase.co/storage/v1/object/public/Photos/vecteezy_gmail-icon-transparent-png_42165820.png"
+                    alt="Gmail"
+                    style="
+                      width: 38px;
+                      height: 38px;
+                      object-fit: contain;
+                      margin-left: -2.5px;
+                    "
+                  />
+                </span>
+              </div>
+              <div class="validation-feedback error" id="emailError"></div>
+              <div class="validation-feedback success" id="emailSuccess"></div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-submit" id="submitBtn">
+              Quero Acesso Agora
+            </button>
+
+            <!-- Trust Badges -->
+            <div class="trust-badges">
+              <div class="trust-badge">
+                <div class="trust-badge-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    />
+                  </svg>
+                </div>
+                <span class="trust-badge-text">Dados 100%<br />Seguros</span>
+              </div>
+              <div class="trust-badge">
+                <div class="trust-badge-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <span class="trust-badge-text">Acesso<br />Instantâneo</span>
+              </div>
+              <div class="trust-badge">
+                <div class="trust-badge-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                  </svg>
+                </div>
+                <span class="trust-badge-text">500+ Membros<br />Ativos</span>
+              </div>
+            </div>
+          </form>
+
+          <!-- Security Logos -->
+          <div class="security-logos">
+            <div class="security-badge">
+              <span class="security-badge-icon">🔒</span>
+              <span class="security-badge-text">SSL</span>
+            </div>
+            <div class="security-badge">
+              <span class="security-badge-icon">🛡️</span>
+              <span class="security-badge-text">GDPR</span>
+            </div>
+            <div class="security-badge">
+              <span class="security-badge-icon">✓</span>
+              <span class="security-badge-text">SECURE</span>
+            </div>
+            <div class="security-badge">
+              <span class="security-badge-icon">🔐</span>
+              <span class="security-badge-text">256-BIT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- IMAGE SECTION -->
+        <div class="image-section">
+          <div class="image-container">
+            <!-- Glow Rings -->
+            <div class="glow-ring"></div>
+            <div class="glow-ring glow-ring-2"></div>
+
+            <!-- Profile Image -->
+            <img
+              src="https://lhujzzoqebgjbsnezmrt.supabase.co/storage/v1/object/public/Photos/giuliainstagram1.png"
+              alt="Giulia Castro Close Friends"
+              class="profile-image"
+              id="profileImg"
+            />
+
+            <!-- Coração Verde 3D -->
+            <div class="heart-badge" title="Acesso VIP">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                />
+              </svg>
+            </div>
+
+            <!-- Ícone com Foto -->
+            <div class="photo-icon-badge" title="Galeria Exclusiva">
+              <img
+                src="https://lhujzzoqebgjbsnezmrt.supabase.co/storage/v1/object/public/Photos/giuliainstagram2.png"
+                alt="Foto Giulia"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Externo -->
+    <script src="script.js"></script>
+  </body>
+</html>
