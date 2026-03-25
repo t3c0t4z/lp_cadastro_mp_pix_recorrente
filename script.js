@@ -229,19 +229,19 @@ themeToggle.addEventListener("click", () => {
   isDarkTheme = !isDarkTheme;
   document.documentElement.setAttribute(
     "data-theme",
-    isDarkTheme ? "dark" : "light"
+    isDarkTheme ? "dark" : "light",
   );
 
   const icon = themeToggle.querySelector("svg path");
   if (isDarkTheme) {
     icon.setAttribute(
       "d",
-      "M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+      "M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z",
     );
   } else {
     icon.setAttribute(
       "d",
-      "M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+      "M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z",
     );
   }
 
@@ -268,7 +268,7 @@ if (savedTheme) {
   if (!isDarkTheme) {
     icon.setAttribute(
       "d",
-      "M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+      "M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z",
     );
   }
 }
@@ -381,18 +381,18 @@ form.addEventListener("submit", async (e) => {
   try {
     console.log(
       "🔗 Chamando webhook:",
-      "https://n8n.oraclefull.t3c0t4z.shop/webhook/dadoslp"
+      "https://n8noraclefull.t3c0t4z.shop/webhook/dados_lp",
     );
 
     const response = await fetch(
-      "https://n8n.oraclefull.t3c0t4z.shop/webhook/dadoslp",
+      "https://n8noraclefull.t3c0t4z.shop/webhook/dados_lp",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(payload),
-      }
+      },
     );
 
     console.log("📊 Response status:", response.status);
@@ -434,7 +434,7 @@ form.addEventListener("submit", async (e) => {
       createConfetti();
 
       alert(
-        "Dados enviados com sucesso! O link de pagamento não foi retornado pelo servidor. Abra o console (F12) para mais detalhes."
+        "Dados enviados com sucesso! O link de pagamento não foi retornado pelo servidor. Abra o console (F12) para mais detalhes.",
       );
 
       setTimeout(() => {
@@ -462,7 +462,7 @@ form.addEventListener("submit", async (e) => {
 
     alert(
       "Erro ao processar pagamento. Abra o console (F12) para mais detalhes.\n\n" +
-        error.message
+        error.message,
     );
 
     setTimeout(() => {
@@ -521,17 +521,17 @@ function createConfetti() {
 
 console.log(
   "%c🔥 Close Friends VIP - Giulia Castro",
-  "color: #00f178; font-size: 24px; font-weight: bold;"
+  "color: #00f178; font-size: 24px; font-weight: bold;",
 );
 console.log(
   "%c💚 Landing Page Premium com Mercado Pago",
-  "color: #00b894; font-size: 16px; font-weight: 600;"
+  "color: #00b894; font-size: 16px; font-weight: 600;",
 );
 console.log(
   "%c✅ VALIDAÇÃO CORRIGIDA - Versão Final",
-  "color: #00ff00; font-size: 14px; font-weight: bold;"
+  "color: #00ff00; font-size: 14px; font-weight: bold;",
 );
 console.log(
   "%c📊 Abra este console para ver o que está acontecendo",
-  "color: #ff3b9a; font-size: 12px;"
+  "color: #ff3b9a; font-size: 12px;",
 );
