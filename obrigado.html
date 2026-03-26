@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acesso Confirmado ✅ | Close Friends</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f0faf4;
+        color: #262626;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        overflow: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background:
+          radial-gradient(
+            ellipse at 20% 50%,
+            rgba(0, 217, 95, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 80% 20%,
+            rgba(0, 217, 95, 0.06) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 60% 80%,
+            rgba(0, 217, 95, 0.07) 0%,
+            transparent 50%
+          );
+        animation: bgPulse 8s ease-in-out infinite alternate;
+        z-index: 0;
+      }
+
+      @keyframes bgPulse {
+        0% {
+          transform: scale(1) rotate(0deg);
+        }
+        100% {
+          transform: scale(1.1) rotate(3deg);
+        }
+      }
+
+      .wrapper {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 460px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(0, 217, 95, 0.15);
+        border-radius: 28px;
+        padding: 52px 40px 44px;
+        backdrop-filter: blur(20px);
+        text-align: center;
+        box-shadow:
+          0 0 0 1px rgba(0, 217, 95, 0.08),
+          0 32px 64px rgba(0, 0, 0, 0.08),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        animation: fadeUp 0.7s ease both;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(32px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .icon-wrap {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #00d95f, #00c853);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 32px;
+        box-shadow:
+          0 0 32px rgba(0, 217, 95, 0.4),
+          0 0 64px rgba(0, 217, 95, 0.15);
+        animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s both;
+      }
+
+      @keyframes popIn {
+        from {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .icon-wrap svg {
+        width: 36px;
+        height: 36px;
+        stroke: #fff;
+        stroke-width: 2.5;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 60;
+        stroke-dashoffset: 60;
+        animation: drawCheck 0.6s ease 0.8s forwards;
+      }
+
+      @keyframes drawCheck {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(0, 217, 95, 0.12);
+        border: 1px solid rgba(0, 217, 95, 0.25);
+        color: #00a846;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 5px 14px;
+        border-radius: 100px;
+        margin-bottom: 20px;
+      }
+
+      .badge::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: #00d95f;
+        border-radius: 50%;
+        animation: blink 1.5s ease infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.3;
+        }
+      }
+
+      h1 {
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 12px;
+        letter-spacing: -0.02em;
+        color: #1a1a1a;
+      }
+
+      .subtitle {
+        font-size: 15px;
+        color: rgba(0, 0, 0, 0.45);
+        line-height: 1.65;
+        margin-bottom: 36px;
+      }
+
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 36px;
+        text-align: left;
+      }
+
+      .step {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: rgba(0, 217, 95, 0.04);
+        border: 1px solid rgba(0, 217, 95, 0.12);
+        border-radius: 14px;
+        padding: 14px 18px;
+        animation: fadeUp 0.5s ease both;
+      }
+
+      .step:nth-child(1) {
+        animation-delay: 0.4s;
+      }
+      .step:nth-child(2) {
+        animation-delay: 0.55s;
+      }
+      .step:nth-child(3) {
+        animation-delay: 0.7s;
+      }
+
+      .step-icon {
+        font-size: 22px;
+        min-width: 32px;
+        text-align: center;
+      }
+
+      .step-text strong {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 2px;
+      }
+
+      .step-text span {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.4);
+      }
+
+      .divider {
+        border: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.07);
+        margin-bottom: 24px;
+      }
+
+      .footer-text {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.35);
+        line-height: 1.6;
+      }
+
+      .footer-text a {
+        color: #00a846;
+        text-decoration: none;
+      }
+
+      .confetti {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .confetti span {
+        position: absolute;
+        border-radius: 2px;
+        opacity: 0;
+        animation: fall linear forwards;
+      }
+
+      @keyframes fall {
+        0% {
+          opacity: 1;
+          transform: translateY(-20px) rotate(0deg);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(100vh) rotate(720deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="confetti" id="confetti"></div>
+
+    <div class="wrapper">
+      <div class="card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+
+        <div class="badge">Pagamento confirmado</div>
+
+        <h1>Seu acesso está<br />sendo liberado! 🎉</h1>
+        <p class="subtitle">
+          Obrigada pela sua assinatura do <strong>Close Friends</strong>.<br />
+          Em instantes você receberá as instruções de acesso.
+        </p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-icon">📲</div>
+            <div class="step-text">
+              <strong>Mensagem no WhatsApp</strong>
+              <span>Você receberá o link de acesso em breve</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-icon">📧</div>
+            <div class="step-text">
+              <strong>Confirmação por e-mail</strong>
+              <span>Verifique também a caixa de spam</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-icon">✨</div>
+            <div class="step-text">
+              <strong>Acesso ao Close Friends</strong>
+              <span>Conteúdo exclusivo liberado para você</span>
+            </div>
+          </div>
+        </div>
+
+        <hr class="divider" />
+        <p class="footer-text">
+          Dúvidas? Fale pelo WhatsApp ou aguarde nossa mensagem.<br />
+          Sua satisfação é nossa prioridade. 💚
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const confetti = document.getElementById("confetti");
+      const colors = ["#00D95F", "#00C853", "#69F0AE", "#ffffff", "#CCFF90"];
+      for (let i = 0; i < 60; i++) {
+        const span = document.createElement("span");
+        span.style.left = Math.random() * 100 + "vw";
+        span.style.top = "-10px";
+        span.style.background =
+          colors[Math.floor(Math.random() * colors.length)];
+        span.style.width = Math.random() * 8 + 5 + "px";
+        span.style.height = Math.random() * 8 + 5 + "px";
+        span.style.animationDuration = Math.random() * 3 + 2 + "s";
+        span.style.animationDelay = Math.random() * 2 + "s";
+        confetti.appendChild(span);
+      }
+    </script>
+  </body>
+</html>
