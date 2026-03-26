@@ -376,14 +376,7 @@ form.addEventListener("submit", async (e) => {
     source: "closefriends_landingpage",
   };
 
-  console.log("📤 Enviando dados:", payload);
-
   try {
-    console.log(
-      "🔗 Chamando webhook:",
-      "https://n8noraclefull.t3c0t4z.shop/webhook/dados_lp",
-    );
-
     const response = await fetch(
       "https://n8noraclefull.t3c0t4z.shop/webhook/dados_lp",
       {
@@ -409,8 +402,6 @@ form.addEventListener("submit", async (e) => {
 
     // Verificar se tem init_point
     if (data.init_point) {
-      console.log("🔗 Link de pagamento encontrado:", data.init_point);
-
       createConfetti();
 
       submitBtn.textContent = "Redirecionando para pagamento...";
@@ -425,7 +416,6 @@ form.addEventListener("submit", async (e) => {
       }, 1500);
     } else {
       console.warn("⚠️ init_point não encontrado na resposta");
-      console.log("📋 Resposta completa:", JSON.stringify(data, null, 2));
 
       submitBtn.textContent = "Dados Enviados!";
       submitBtn.style.background = "linear-gradient(135deg, #00f178, #00b894)";
@@ -516,22 +506,5 @@ function createConfetti() {
 }
 
 // ========================================
-// CONSOLE BRANDING
+// END
 // ========================================
-
-console.log(
-  "%c🔥 Close Friends VIP - Giulia Castro",
-  "color: #00f178; font-size: 24px; font-weight: bold;",
-);
-console.log(
-  "%c💚 Landing Page Premium com Mercado Pago",
-  "color: #00b894; font-size: 16px; font-weight: 600;",
-);
-console.log(
-  "%c✅ VALIDAÇÃO CORRIGIDA - Versão Final",
-  "color: #00ff00; font-size: 14px; font-weight: bold;",
-);
-console.log(
-  "%c📊 Abra este console para ver o que está acontecendo",
-  "color: #ff3b9a; font-size: 12px;",
-);
