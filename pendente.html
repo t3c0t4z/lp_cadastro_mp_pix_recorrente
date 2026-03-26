@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagamento Pendente ⏳ | Close Friends</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f0faf4;
+        color: #262626;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        overflow: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background:
+          radial-gradient(
+            ellipse at 20% 50%,
+            rgba(0, 217, 95, 0.08) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 80% 20%,
+            rgba(0, 217, 95, 0.05) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 60% 80%,
+            rgba(0, 217, 95, 0.06) 0%,
+            transparent 50%
+          );
+        animation: bgPulse 8s ease-in-out infinite alternate;
+        z-index: 0;
+      }
+
+      @keyframes bgPulse {
+        0% {
+          transform: scale(1) rotate(0deg);
+        }
+        100% {
+          transform: scale(1.1) rotate(3deg);
+        }
+      }
+
+      .wrapper {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 460px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(0, 217, 95, 0.15);
+        border-radius: 28px;
+        padding: 52px 40px 44px;
+        backdrop-filter: blur(20px);
+        text-align: center;
+        box-shadow:
+          0 0 0 1px rgba(0, 217, 95, 0.08),
+          0 32px 64px rgba(0, 0, 0, 0.08),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        animation: fadeUp 0.7s ease both;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(32px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Ícone de relógio animado */
+      .icon-wrap {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #ffb300, #ff8f00);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 32px;
+        box-shadow:
+          0 0 32px rgba(255, 179, 0, 0.4),
+          0 0 64px rgba(255, 179, 0, 0.15);
+        animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s both;
+      }
+
+      @keyframes popIn {
+        from {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .icon-wrap svg {
+        width: 36px;
+        height: 36px;
+        stroke: #fff;
+        stroke-width: 2.5;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        animation: pulse 2s ease infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(0.9);
+          opacity: 0.8;
+        }
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(255, 179, 0, 0.12);
+        border: 1px solid rgba(255, 179, 0, 0.3);
+        color: #e65100;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 5px 14px;
+        border-radius: 100px;
+        margin-bottom: 20px;
+      }
+
+      .badge::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: #ffb300;
+        border-radius: 50%;
+        animation: blink 1.5s ease infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.3;
+        }
+      }
+
+      h1 {
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 12px;
+        letter-spacing: -0.02em;
+        color: #1a1a1a;
+      }
+
+      .subtitle {
+        font-size: 15px;
+        color: rgba(0, 0, 0, 0.45);
+        line-height: 1.65;
+        margin-bottom: 36px;
+      }
+
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 36px;
+        text-align: left;
+      }
+
+      .step {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: rgba(255, 179, 0, 0.04);
+        border: 1px solid rgba(255, 179, 0, 0.15);
+        border-radius: 14px;
+        padding: 14px 18px;
+        animation: fadeUp 0.5s ease both;
+      }
+
+      .step:nth-child(1) {
+        animation-delay: 0.4s;
+      }
+      .step:nth-child(2) {
+        animation-delay: 0.55s;
+      }
+      .step:nth-child(3) {
+        animation-delay: 0.7s;
+      }
+
+      .step-icon {
+        font-size: 22px;
+        min-width: 32px;
+        text-align: center;
+      }
+
+      .step-text strong {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 2px;
+      }
+
+      .step-text span {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.4);
+      }
+
+      /* Alerta de ação */
+      .alert {
+        background: #fff8e1;
+        border: 1px solid rgba(255, 179, 0, 0.35);
+        border-radius: 14px;
+        padding: 16px 18px;
+        font-size: 13px;
+        color: #5d4037;
+        line-height: 1.6;
+        margin-bottom: 28px;
+        text-align: left;
+      }
+
+      .alert strong {
+        color: #e65100;
+      }
+
+      .divider {
+        border: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.07);
+        margin-bottom: 24px;
+      }
+
+      .footer-text {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.35);
+        line-height: 1.6;
+      }
+
+      .footer-text a {
+        color: #00a846;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="card">
+        <div class="icon-wrap">
+          <!-- Ícone relógio -->
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+
+        <div class="badge">Pagamento pendente</div>
+
+        <h1>Seu PIX ainda não<br />foi confirmado ⏳</h1>
+        <p class="subtitle">
+          Identificamos que o pagamento ainda está
+          <strong>pendente</strong>.<br />
+          Assim que o PIX for confirmado, seu acesso será liberado
+          automaticamente.
+        </p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-icon">📋</div>
+            <div class="step-text">
+              <strong>Copie o código PIX</strong>
+              <span>Volte ao app do seu banco e finalize o pagamento</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-icon">⏱️</div>
+            <div class="step-text">
+              <strong>Aguarde a confirmação</strong>
+              <span>PIX é confirmado em até 5 minutos</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-icon">📲</div>
+            <div class="step-text">
+              <strong>Receba no WhatsApp</strong>
+              <span
+                >O acesso será enviado automaticamente após confirmação</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="alert">
+          ⚡ <strong>PIX expirado?</strong> Volte para a página inicial e gere
+          um novo código. O acesso é liberado automaticamente assim que o
+          pagamento for detectado.
+        </div>
+
+        <hr class="divider" />
+        <p class="footer-text">
+          Dúvidas? Fale pelo WhatsApp ou aguarde nossa mensagem.<br />
+          <a href="https://closefriendsgiuliacastrov.nextupduo.com"
+            >← Voltar para a página inicial</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
