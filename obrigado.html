@@ -24,10 +24,6 @@
     />
 
     <title>Acesso Confirmado ✅ | Close Friends</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <style>
       *,
       *::before,
@@ -38,7 +34,9 @@
       }
 
       body {
-        font-family: "Inter", sans-serif;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+          sans-serif;
         background: #f0faf4;
         color: #262626;
         min-height: 100vh;
@@ -46,7 +44,6 @@
         align-items: center;
         justify-content: center;
         padding: 24px;
-        overflow: hidden;
       }
 
       body::before {
@@ -85,19 +82,48 @@
         }
       }
 
+      .confetti {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 0;
+      }
+
+      .confetti span {
+        position: absolute;
+        border-radius: 2px;
+        opacity: 0;
+        animation: fall linear forwards;
+      }
+
+      @keyframes fall {
+        0% {
+          opacity: 1;
+          transform: translateY(-20px) rotate(0deg);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(100vh) rotate(720deg);
+        }
+      }
+
       .wrapper {
         position: relative;
         z-index: 1;
         width: 100%;
         max-width: 460px;
+        padding: 24px 0;
       }
 
       .card {
-        background: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.9);
         border: 1px solid rgba(0, 217, 95, 0.15);
         border-radius: 28px;
         padding: 52px 40px 44px;
-        backdrop-filter: blur(20px);
         text-align: center;
         box-shadow:
           0 0 0 1px rgba(0, 217, 95, 0.08),
@@ -276,34 +302,6 @@
       .footer-text a {
         color: #00a846;
         text-decoration: none;
-      }
-
-      .confetti {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 0;
-      }
-
-      .confetti span {
-        position: absolute;
-        border-radius: 2px;
-        opacity: 0;
-        animation: fall linear forwards;
-      }
-
-      @keyframes fall {
-        0% {
-          opacity: 1;
-          transform: translateY(-20px) rotate(0deg);
-        }
-        100% {
-          opacity: 0;
-          transform: translateY(100vh) rotate(720deg);
-        }
       }
     </style>
   </head>
